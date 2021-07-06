@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity_India">
+
+    <TextView
+        android:id="@+id/textCountryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Country Name: India"></TextView>
+
+    <TextView
+        android:id="@+id/textCountryCapital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Country Capital: New Delhi"></TextView>
+
+    <TextView
+        android:id="@+id/textCountryCallingCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Country Calling Code: 91"></TextView>
+
+    <TextView
+        android:id="@+id/textCountryPopulation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Country Population: 1.381 Billion"></TextView>
+
+    <TextView
+        android:id="@+id/textCountryCurrency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Country Currency: Rupee"></TextView>
+
+    <TextView
+        android:id="@+id/textCountryLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Country Language: Hindi"></TextView>
+
+</LinearLayout>

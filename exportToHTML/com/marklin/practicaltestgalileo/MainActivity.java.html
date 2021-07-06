@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.marklin.practicaltestgalileo</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.AdapterView</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.ArrayAdapter</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.ListView</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity {</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span>
+        <span class="s1">setContentView(R.layout.activity_main)</span><span class="s0">;</span>
+
+        <span class="s1">ListView myListView = (ListView) findViewById(R.id.myListView)</span><span class="s0">;</span>
+
+        <span class="s1">ArrayList&lt;String&gt; myCountries  = </span><span class="s0">new </span><span class="s1">ArrayList&lt;String&gt;()</span><span class="s0">;</span>
+
+        <span class="s1">myCountries.add(</span><span class="s2">&quot;China&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">myCountries.add(</span><span class="s2">&quot;India&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">myCountries.add(</span><span class="s2">&quot;Japan&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">myCountries.add(</span><span class="s2">&quot;Philippines&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">myCountries.add(</span><span class="s2">&quot;South Korea&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">ArrayAdapter&lt;String&gt; arrayAdapter = </span><span class="s0">new </span><span class="s1">ArrayAdapter&lt;String&gt;(</span><span class="s0">this, </span><span class="s1">android.R.layout.simple_list_item_1</span><span class="s0">, </span><span class="s1">myCountries)</span><span class="s0">;</span>
+
+        <span class="s1">myListView.setAdapter(arrayAdapter)</span><span class="s0">;</span>
+
+        <span class="s1">myListView.setOnItemClickListener(</span><span class="s0">new </span><span class="s1">AdapterView.OnItemClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onItemClick(AdapterView&lt;?&gt; parent</span><span class="s0">, </span><span class="s1">View view</span><span class="s0">, int </span><span class="s1">position</span><span class="s0">, long </span><span class="s1">id) {</span>
+                <span class="s0">if </span><span class="s1">(position == </span><span class="s3">0</span><span class="s1">){</span>
+                    <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(view.getContext()</span><span class="s0">, </span><span class="s1">activity_China.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">if </span><span class="s1">(position == </span><span class="s3">1</span><span class="s1">){</span>
+                    <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(view.getContext()</span><span class="s0">, </span><span class="s1">activity_India.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">if </span><span class="s1">(position == </span><span class="s3">2</span><span class="s1">){</span>
+                    <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(view.getContext()</span><span class="s0">, </span><span class="s1">activity_Japan.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">if </span><span class="s1">(position == </span><span class="s3">3</span><span class="s1">){</span>
+                    <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(view.getContext()</span><span class="s0">, </span><span class="s1">activity_Philippines.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">if </span><span class="s1">(position == </span><span class="s3">4</span><span class="s1">){</span>
+                    <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(view.getContext()</span><span class="s0">, </span><span class="s1">activity_SouthKorea.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
